@@ -25,19 +25,77 @@ export default {
 - Use margin and padding to style the components and ensure the components are spaced out nicely
 - Please ONLY return the full React code starting with the imports, nothing else. It's very important for my job that you only return the React code with imports. 
 - DO NOT START WITH \\\jsx or \\\`typescript or \\\`javascript or \\\`tsx or \\\.`,
-    PROMPT: dedent`:You are a professtional react developer and UI/UX designer
-- based on provider wireframe image, make sure to generate similar web page
-- and Depends on the description write a react and tailwindcss code 
-- Make sure to add Header and Footer with proper option as metioned in wireframe if Not then add option releated to description
-- for image placeholder please use 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg'
-- Add All small details and make UI UX design more professtional
-- Make sure to keep same color combination across the page
-- Add Some Colors to make it more modern UI UX
-- Use lucid library for icons
-- Do not use any third party library
-- Only give react+ tailwindcss code and do not write any text other than code
-`,
-
+    PROMPT: dedent + "You are a professional React developer and UI/UX designer. Based on the provided wireframe image, generate a similar web page as a complete and The application should mimic a image, self-contained React component. The entire code must be contained within a single file (do not separate components into different files) so that it can be easily executed in sandbox environments.\n\n" +
+"Requirements:\n\n" +
+"1. Overall Structure:\n" +
+"   - Include a Header and Footer with appropriate options; if the wireframe does not specify details, add options relevant to a professional web page.\n" +
+"   - The code must be organized in a single file, containing all necessary React code and Tailwind CSS styling via class names.\n\n" +
+"2. Image Placeholders:\n" +
+"   - For any image placeholders, leave it blank box " +
+"3. UI/UX Enhancements:\n" +
+"   - Incorporate all small details to enhance the UI/UX design professionally.\n" +
+"   - Maintain a consistent color combination throughout the page and use modern, contemporary colors.\n\n" +
+"4. Icon Usage:\n" +
+"   - Use the `lucide-react` library for icons. Import each icon directly from `lucide-react` to ensure they are defined.\n" +
+"   - Double-check that every icon name you use exists in the `lucide-react` library; if an icon does not exist, choose an appropriate alternative.\n" +
+"   - Do not use any third-party libraries beyond `lucide-react` and `tailwindcss`.\n\n" +
+"5. Dependencies:\n" +
+"   - Use the following dependencies (ensure they are installed via your package manager):\n" +
+"     ```json\n" +
+"     {\n" +
+"       \"postcss\": \"^8\",\n" +
+"       \"tailwindcss\": \"^3.4.1\",\n" +
+"       \"autoprefixer\": \"^10.0.0\",\n" +
+"       \"uuid4\": \"^2.0.3\",\n" +
+"       \"tailwind-merge\": \"^2.4.0\",\n" +
+"       \"tailwindcss-animate\": \"^1.0.7\",\n" +
+"       \"lucide-react\": \"^0.469.0\",\n" +
+"       \"react-router-dom\": \"^7.1.1\",\n" +
+"       \"firebase\": \"^11.1.0\",\n" +
+"       \"@google/generative-ai\": \"^0.21.0\",\n" +
+"       \"date-fns\": \"^4.1.0\",\n" +
+"       \"react-chartjs-2\": \"^5.3.0\",\n" +
+"       \"chart.js\": \"^4.4.7\"\n" +
+"     }\n" +
+"     ```\n\n" +
+"6. File Structure & Configuration:\n" +
+"   - Ensure the following files are created/updated with the given content:\n" +
+"     - /App.css:\n" +
+"       ```css\n" +
+"       @tailwind base;\n" +
+"       @tailwind components;\n" +
+"       @tailwind utilities;\n" +
+"       ```\n" +
+"     - /tailwind.config.js:\n" +
+"       ```js\n" +
+"       /** @type {import('tailwindcss').Config} */\n" +
+"       module.exports = {\n" +
+"         content: [\n" +
+"           \"./src/**/*.{js,jsx,ts,tsx}\"\n" +
+"         ],\n" +
+"         theme: {\n" +
+"           extend: {},\n" +
+"         },\n" +
+"         plugins: [],\n" +
+"       };\n" +
+"       ```\n" +
+"     - /postcss.config.js:\n" +
+"       ```js\n" +
+"       /** @type {import('postcss-load-config').Config} */\n" +
+"       const config = {\n" +
+"         plugins: {\n" +
+"           tailwindcss: {},\n" +
+"         },\n" +
+"       };\n" +
+"       module.exports = config;\n" +
+"       ```\n\n" +
+"7. Additional Requirements:\n" +
+"   - Use `react-router-dom` for navigation between views/components as needed.\n" +
+"   - Ensure the UI is responsive and adheres to modern design principles.\n" +
+"   - Include inline comments for clarity and maintainability.\n" +
+"   - Provide the complete, self-contained React and Tailwind CSS code without any additional text or explanations.\n\n" +
+"Based on the above instructions and the provided wireframe image, generate the complete code in a single file and ensure it should in react js sandbox environment."
+,
     AiModelList: [
         {
             name: 'Gemini Google',
@@ -52,7 +110,7 @@ export default {
         {
             name: 'Deepkseek',
             icon: '/deepseek.png',
-            modelName: 'qwen/qwen-turbo'
+            modelName: 'deepseek/deepseek-r1:free'
         }
     ],
     DEPENDANCY: {
