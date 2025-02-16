@@ -20,81 +20,98 @@ export default {
 - For all images, please use image placeholder from :https://redthread.uoregon.edu/files/original/affd16fd5264cab9197da4cd1a996f820e601ee4.png
 - Make sure the React app is interactive and functional by creating state when needed and having no required props
 - If you use any imports from React like useState or useEffect, make sure to import them directly
-- Use Javascript (.js) as the language for the React component
+- Use js as the language for the React component
 - Use Tailwind classes for styling. DO NOT USE ARBITRARY VALUES (e.g. \h-[600px]\). Make sure to use a consistent color palette.
 - Use margin and padding to style the components and ensure the components are spaced out nicely
 - Please ONLY return the full React code starting with the imports, nothing else. It's very important for my job that you only return the React code with imports. 
 - DO NOT START WITH \\\jsx or \\\`typescript or \\\`javascript or \\\`tsx or \\\.`,
-    PROMPT: dedent + "You are a professional React developer and UI/UX designer. Based on the provided wireframe image, generate a similar web page as a complete and The application should mimic a image, self-contained React component. The entire code must be contained within a single file (do not separate components into different files) so that it can be easily executed in sandbox environments.\n\n" +
-"Requirements:\n\n" +
-"1. Overall Structure:\n" +
-"   - Include a Header and Footer with appropriate options; if the wireframe does not specify details, add options relevant to a professional web page.\n" +
-"   - The code must be organized in a single file, containing all necessary React code and Tailwind CSS styling via class names.\n\n" +
-"2. Image Placeholders:\n" +
-"   - For any image placeholders, leave it blank box " +
-"3. UI/UX Enhancements:\n" +
-"   - Incorporate all small details to enhance the UI/UX design professionally.\n" +
-"   - Maintain a consistent color combination throughout the page and use modern, contemporary colors.\n\n" +
-"4. Icon Usage:\n" +
-"   - Use the `lucide-react` library for icons. Import each icon directly from `lucide-react` to ensure they are defined.\n" +
-"   - Double-check that every icon name you use exists in the `lucide-react` library; if an icon does not exist, choose an appropriate alternative.\n" +
-"   - Do not use any third-party libraries beyond `lucide-react` and `tailwindcss`.\n\n" +
-"5. Dependencies:\n" +
-"   - Use the following dependencies (ensure they are installed via your package manager):\n" +
-"     ```json\n" +
-"     {\n" +
-"       \"postcss\": \"^8\",\n" +
-"       \"tailwindcss\": \"^3.4.1\",\n" +
-"       \"autoprefixer\": \"^10.0.0\",\n" +
-"       \"uuid4\": \"^2.0.3\",\n" +
-"       \"tailwind-merge\": \"^2.4.0\",\n" +
-"       \"tailwindcss-animate\": \"^1.0.7\",\n" +
-"       \"lucide-react\": \"^0.469.0\",\n" +
-"       \"react-router-dom\": \"^7.1.1\",\n" +
-"       \"firebase\": \"^11.1.0\",\n" +
-"       \"@google/generative-ai\": \"^0.21.0\",\n" +
-"       \"date-fns\": \"^4.1.0\",\n" +
-"       \"react-chartjs-2\": \"^5.3.0\",\n" +
-"       \"chart.js\": \"^4.4.7\"\n" +
-"     }\n" +
-"     ```\n\n" +
-"6. File Structure & Configuration:\n" +
-"   - Ensure the following files are created/updated with the given content:\n" +
-"     - /App.css:\n" +
-"       ```css\n" +
-"       @tailwind base;\n" +
-"       @tailwind components;\n" +
-"       @tailwind utilities;\n" +
-"       ```\n" +
-"     - /tailwind.config.js:\n" +
-"       ```js\n" +
-"       /** @type {import('tailwindcss').Config} */\n" +
-"       module.exports = {\n" +
-"         content: [\n" +
-"           \"./src/**/*.{js,jsx,ts,tsx}\"\n" +
-"         ],\n" +
-"         theme: {\n" +
-"           extend: {},\n" +
-"         },\n" +
-"         plugins: [],\n" +
-"       };\n" +
-"       ```\n" +
-"     - /postcss.config.js:\n" +
-"       ```js\n" +
-"       /** @type {import('postcss-load-config').Config} */\n" +
-"       const config = {\n" +
-"         plugins: {\n" +
-"           tailwindcss: {},\n" +
-"         },\n" +
-"       };\n" +
-"       module.exports = config;\n" +
-"       ```\n\n" +
-"7. Additional Requirements:\n" +
-"   - Use `react-router-dom` for navigation between views/components as needed.\n" +
-"   - Ensure the UI is responsive and adheres to modern design principles.\n" +
-"   - Include inline comments for clarity and maintainability.\n" +
-"   - Provide the complete, self-contained React and Tailwind CSS code without any additional text or explanations.\n\n" +
-"Based on the above instructions and the provided wireframe image, generate the complete code in a single file and ensure it should in react js sandbox environment."
+    PROMPT: dedent`
+You are a highly skilled React developer with expertise in creating functional, responsive, and well-structured web applications using React and Tailwind CSS. You will be provided with a wireframe design (PNG) for a website. Your task is to write fully optimized, clean, and accurate React code based on the design. Additionally, ensure the provided dependencies and configuration files are applied and set up correctly. The code should follow the conditions below:
+
+### General Requirements:
+- **React Component Structure:** Create a single main React component that is fully functional. Feel free to create subcomponents for specific sections or features but ensure the entire UI can be rendered from this main component.
+- **State and Interactivity:** Use React’s \`useState\` or \`useEffect\` hooks when required. Ensure the app is interactive (e.g., handle form inputs, button clicks, or other dynamic behaviors).
+- **Layout and UI Elements:** Ensure the design includes headers, footers, sidebars, navigation, buttons, forms, etc., and that each element is accounted for.
+- **Tailwind CSS Styling:**
+  - Use Tailwind classes to style all elements (e.g., padding, margins, background colors, font sizes, borders).
+  - **Do not use arbitrary Tailwind values** (e.g., \`h-[600px]\`, \`\\h-[500px]\`), stick to built-in, standardized values like \`p-4\`, \`m-2\`, \`bg-blue-500\`, etc.
+  - Maintain consistency in colors, fonts, and spacing based on the wireframe. Pay careful attention to ensuring exact values for font sizes, colors, and layouts.
+- **Text and Content:** Ensure that all text content matches exactly as shown in the wireframe, including headers, paragraphs, button labels, etc.
+- **Colors and Styling:** Ensure color consistency across the design by using specific color values and providing proper contrasts for readability.
+- **Images and Assets:**
+  - **Leave space empty** where any image is supposed to be shown in the wireframe. Do not insert any image, simply leave the space empty, maintaining the layout's integrity.
+  - If any image is explicitly required, use the placeholder URL: \`https://redthread.uoregon.edu/files/original/affd16fd5264cab9197da4cd1a996f820e601ee4.png\`.
+- **Responsive Design:** Ensure the layout works well on different screen sizes by using Tailwind’s responsive utilities (e.g., \`sm:\`, \`md:\`, \`lg:\`) to adjust the design.
+
+### Dependency and Configuration Requirements:
+Ensure the following dependencies are included in the \`package.json\` file and used correctly in the project:
+
+\`\`\`json
+"dependencies": {
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.0.0",
+    "uuid4": "^2.0.3",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "lucide-react": "^0.469.0",
+    "react-router-dom": "^7.1.1",
+    "firebase": "^11.1.0",
+    "@google/generative-ai": "^0.21.0",
+    "date-fns": "^4.1.0",
+    "react-chartjs-2": "^5.3.0",
+    "chart.js": "^4.4.7"
+}
+\`\`\`
+
+Additionally, ensure the following configuration files are set up correctly:
+
+### 1. **/App.css**:
+\`\`\`css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+\`\`\`
+
+### 2. **/tailwind.config.js**:
+\`\`\`javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+\`\`\`
+
+### 3. **/postcss.config.js**:
+\`\`\`javascript
+/** @type {import('postcss-load-config').Config} */
+const config = {
+  plugins: {
+    tailwindcss: {},
+  },
+};
+\`\`\`
+
+### Code Output Requirements:
+- **React Code:** Only return the React code starting with the necessary imports, and ensure it aligns with the given configuration.
+- **No Comments or Explanations:** Do not include any explanations, comments, or placeholders in the code (e.g., \`<!-- Add other navigation links as needed -->\`). Write the full and functional code as per the design without leaving placeholders.
+- **Proper Imports:** Include the necessary React imports and make sure to use a default export for the main component.
+
+Example import section:
+\`\`\`javascript
+import React, { useState, useEffect } from 'react';
+\`\`\`
+
+### Important Notes:
+- Ensure proper use of state and functional components, maintaining readability and code quality.
+- Ensure Tailwind CSS is fully integrated and follows the project's standards.
+- The app should be fully interactive, without needing further modification to run smoothly after receiving the code.
+`
 ,
     AiModelList: [
         {
