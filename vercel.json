@@ -1,8 +1,0 @@
-{
-    "functions": {
-      "api/ai-model.js": {
-        "maxDuration": 60
-      }
-    }
-  }
-  
